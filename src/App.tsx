@@ -1,16 +1,17 @@
-import {
-  // Stat,
-  // StatLabel,
-  // StatNumber,
-  // StatHelpText,
-  Button,
-  //StatArrow,
-  //StatGroup,
-} from '@chakra-ui/react'
+import { Grid, GridItem, Show} from '@chakra-ui/react'
 
 function App() {
-  return <Button colorScheme='blue'>Hello World</Button>
-  //return <Stat> <StatLabel>Collected Fees</StatLabel> <StatNumber>£0.00</StatNumber> <StatHelpText>Feb 12 - Feb 28</StatHelpText></Stat>
+  return <Grid templateAreas={{
+    base: '"nav" "main"',
+    lg: '"nav nav" "aside main"'
+  }}>
+    <GridItem area='nav' bg='coral'>Nav</GridItem>
+    <Show above="lg">
+      <GridItem area='aside' bg='gold'>Aside</GridItem>
+    </Show>
+    <GridItem area='main' bg='dodgerblue'>Main</GridItem>
+</Grid>
 }
+  
 
 export default App
