@@ -10,7 +10,7 @@ import { MdPhoneIphone } from "react-icons/md";
 import { SiNintendo } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
 import { Platform } from "../Hooks/useGames";
-import { HStack, Icon, Tooltip } from "@chakra-ui/react";
+import { HStack, Icon } from "@chakra-ui/react";
 import { IconType } from "react-icons";
 
 interface Props {
@@ -33,7 +33,12 @@ const PlatformIconList = ({ platforms }: Props) => {
   return (
     <HStack marginY={"1"}>
       {platforms.map((p) => (
-        <Icon as={iconMap[p.slug]} title={p.name} color="gray.500"></Icon>
+        <Icon
+          key={p.slug}
+          as={iconMap[p.slug]}
+          title={p.name}
+          color="gray.500"
+        ></Icon>
       ))}
     </HStack>
   );
